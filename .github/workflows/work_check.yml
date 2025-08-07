@@ -1,4 +1,4 @@
-name: work
+name: work_check
 on: push
 jobs:
     build-setup:
@@ -6,9 +6,8 @@ jobs:
         steps: 
             - uses: actions/checkout@v4
             - uses: actions/setup-node@v4
-            - run: |
-                make start
-                make setup
+            - run: npm setup
+            - run: npm run start
 
     test-lint:
         runs-on: ubuntu latest
@@ -17,5 +16,5 @@ jobs:
             - uses: actions/checkout@v4
             - uses: actions/setup-node@v4
             - run: |
-                make test
-                make lint
+                npm run test
+                npm run lint
