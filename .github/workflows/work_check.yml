@@ -8,13 +8,6 @@ jobs:
             - uses: actions/setup-node@v4
             - run: npm setup
             - run: npm run start
-
-    test-lint:
-        runs-on: ubuntu latest
-        needs: build-setup
-        steps:
-            - uses: actions/checkout@v4
-            - uses: actions/setup-node@v4
             - run: |
                 npm run test
                 npm run lint
