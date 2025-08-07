@@ -8,7 +8,6 @@ jobs:
             - uses: actions/setup-node@v4
             - run: npm install
             - run: |
-                make start
                 make setup
 
     test-lint:
